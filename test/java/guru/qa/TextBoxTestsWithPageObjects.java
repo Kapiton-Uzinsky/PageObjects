@@ -1,9 +1,10 @@
 package guru.qa;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+
+import javax.security.auth.login.Configuration;
 
 public class TextBoxTestsWithPageObjects {
 
@@ -14,7 +15,6 @@ public class TextBoxTestsWithPageObjects {
 
     @BeforeAll
     static void setup() {
-
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.startMaximized = true;
     }
@@ -31,7 +31,7 @@ public class TextBoxTestsWithPageObjects {
         registrationPage.setDate("21", "August", "1992");
         registrationPage.typeSubjects("Math");
         registrationPage.typeHobbies("Sports");
-        registrationPage.uploudFile("./img/1.png");
+        registrationPage.uploudFile("img/1.png");
         registrationPage.typeAdress("ulica lenina");
         registrationPage.selectState("NCR");
         registrationPage.selectCity("Delhi");
@@ -46,7 +46,7 @@ public class TextBoxTestsWithPageObjects {
         registrationPage.checkResultsValue("21" + "August" + "1992");
         registrationPage.checkResultsValue("Math");
         registrationPage.checkResultsValue("Sports");
-        registrationPage.checkResultsValue("./img/1.png");
+        registrationPage.checkResultsValue("img/1.png");
         registrationPage.checkResultsValue("ulica lenina");
         registrationPage.checkResultsValue("NCR" + " " + "Delhi");
 
